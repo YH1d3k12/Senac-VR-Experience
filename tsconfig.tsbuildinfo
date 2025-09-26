@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/components/environmentcard.tsx","./src/components/footer.tsx","./src/components/modelviewer.tsx","./src/components/navbar.tsx","./src/pages/home.tsx","./src/pages/viewer.tsx","./src/types/index.ts","./src/utils/environments.ts"],"version":"5.9.2"}

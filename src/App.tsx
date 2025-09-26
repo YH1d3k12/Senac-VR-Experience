@@ -6,7 +6,7 @@ import './styles/App.css';
 
 const App: React.FC = () => {
   return (
-    <Router>
+    <Router basename='/Senac-VR-Experience/'>
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />

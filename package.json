@@ -1,13 +1,16 @@
 {
+  "author": "Djalma Hideki Yamamoto",
   "name": "senac-vr-experience",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.6",
@@ -19,7 +22,10 @@
     "three": "^0.180.0"
   },
   "devDependencies": {
+    "@types/react-dom": "^19.1.9",
     "@vitejs/plugin-react": "^4.4.1",
+    "gh-pages": "^6.3.0",
+    "typescript": "^5.9.2",
     "vite": "^6.3.5"
   },
   "packageManager": "pnpm@10.4.1+sha512.c753b6c3ad7afa13af388fa6d808035a008e30ea9993f58c6663e2bc5ff21679aa834db094987129aa4d488b86df57f7b634981b2f827cdcacc698cc0cfb88af"
