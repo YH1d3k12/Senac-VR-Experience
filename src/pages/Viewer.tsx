@@ -10,6 +10,7 @@ const Viewer: React.FC = () => {
   const [environment, setEnvironment] = useState<Environment | null>(null);
   const [infoPoints, setInfoPoints] = useState<InfoPoint[]>([]);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [audio, setAudio] = useState<HTMLAudioElement | null>(null);
   const [showControls, setShowControls] = useState(true);
 
   useEffect(() => {
@@ -17,15 +18,22 @@ const Viewer: React.FC = () => {
     if (env) {
       setEnvironment(env);
       setInfoPoints(env.infoPoints || []);
+
+      if (env.audioPath) {
+        const newAudio = new Audio(env.audioPath);
+        newAudio.loop = true; // se quiser que o áudio fique em loop
+        setAudio(newAudio);
+      }
     } else {
       navigate('/');
     }
   }, [id, navigate]);
 
+
   const handleInfoPointToggle = (pointId: string) => {
-    setInfoPoints(prev => 
-      prev.map(point => 
-        point.id === pointId 
+    setInfoPoints(prev =>
+      prev.map(point =>
+        point.id === pointId
           ? { ...point, visible: !point.visible }
           : { ...point, visible: false }
       )
@@ -34,16 +42,25 @@ const Viewer: React.FC = () => {
 
   const toggleAllInfoPoints = () => {
     const allVisible = infoPoints.every(point => point.visible);
-    setInfoPoints(prev => 
+    setInfoPoints(prev =>
       prev.map(point => ({ ...point, visible: !allVisible }))
     );
   };
 
   const playAudio = () => {
+    if (!audio) return;
+
+    if (isPlaying) {
+      audio.pause();
+    } else {
+      audio.play().catch(err => {
+        console.error("Erro ao tocar o áudio:", err);
+      });
+    }
+
     setIsPlaying(!isPlaying);
-    // Aqui seria implementada a funcionalidade de áudio
-    console.log('Toggle audio for:', environment?.name);
   };
+
 
   if (!environment) {
     return (
@@ -70,12 +87,12 @@ const Viewer: React.FC = () => {
             </svg>
             <span>Voltar</span>
           </button>
-          
+
           <div className="text-center">
             <h1 className="text-2xl font-bold text-white">{environment.name}</h1>
             <p className="text-cyan-400 text-sm">Experiência Virtual</p>
           </div>
-          
+
           <button
             onClick={() => setShowControls(!showControls)}
             className="bg-black/50 backdrop-blur-md px-4 py-2 rounded-full text-white hover:bg-black/70 transition-all"
@@ -99,15 +116,14 @@ const Viewer: React.FC = () => {
         <div className="absolute bottom-6 left-6 right-6 z-20">
           <div className="bg-black/50 backdrop-blur-md rounded-xl p-6 max-w-md mx-auto">
             <h3 className="text-white font-semibold mb-4">Controles</h3>
-            
+
             <div className="grid grid-cols-2 gap-4 mb-4">
               <button
                 onClick={playAudio}
-                className={`flex items-center justify-center space-x-2 px-4 py-3 rounded-lg transition-all ${
-                  isPlaying 
-                    ? 'bg-cyan-400 text-black' 
+                className={`flex items-center justify-center space-x-2 px-4 py-3 rounded-lg transition-all ${isPlaying
+                    ? 'bg-cyan-400 text-black'
                     : 'bg-white/10 text-white hover:bg-white/20'
-                }`}
+                  }`}
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   {isPlaying ? (
@@ -118,7 +134,7 @@ const Viewer: React.FC = () => {
                 </svg>
                 <span className="text-sm">{isPlaying ? 'Pausar' : 'Áudio'}</span>
               </button>
-              
+
               <button
                 onClick={toggleAllInfoPoints}
                 className="flex items-center justify-center space-x-2 px-4 py-3 rounded-lg bg-white/10 text-white hover:bg-white/20 transition-all"
@@ -129,7 +145,7 @@ const Viewer: React.FC = () => {
                 <span className="text-sm">Info</span>
               </button>
             </div>
-            
+
             <div className="text-center">
               <p className="text-gray-300 text-sm mb-2">{environment.description}</p>
               <div className="flex items-center justify-center space-x-2">

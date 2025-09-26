@@ -6,6 +6,7 @@ export const environments: Environment[] = [
     name: 'Auditório',
     description: 'Espaço moderno para apresentações e eventos acadêmicos com capacidade para grandes audiências.',
     modelPath: '/src/assets/Auditorio.glb',
+    audioPath: '/src/assets/audios/audio.mp3',
     infoPoints: [
       {
         id: 'stage',
@@ -21,6 +22,7 @@ export const environments: Environment[] = [
     name: 'Biblioteca',
     description: 'Centro de conhecimento com acervo digital e físico, espaços de estudo individual e em grupo.',
     modelPath: '/src/assets/biblioteca.glb',
+    audioPath: '/src/assets/audios/audio.mp3',
     infoPoints: [
       {
         id: 'reading-area',
@@ -36,6 +38,7 @@ export const environments: Environment[] = [
     name: 'Cozinha Pedagógica',
     description: 'Laboratório gastronômico equipado com tecnologia de ponta para cursos de culinária.',
     modelPath: '/src/assets/cozinha.glb',
+    audioPath: '/src/assets/audios/audio.mp3',
     infoPoints: [
       {
         id: 'cooking-station',
