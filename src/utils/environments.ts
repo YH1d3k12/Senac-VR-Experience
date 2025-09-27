@@ -5,8 +5,8 @@ export const environments: Environment[] = [
     id: 'auditorio',
     name: 'Auditório',
     description: 'Espaço moderno para apresentações e eventos acadêmicos com capacidade para grandes audiências.',
-    modelPath: '/src/assets/Auditorio.glb',
-    audioPath: '/src/assets/audios/audio.mp3',
+    modelPath: '/Senac-VR-Experience/assets/Auditorio.glb',
+    audioPath: '/Senac-VR-Experience/assets/audios/audio.mp3',
     infoPoints: [
       {
         id: 'stage',
@@ -21,8 +21,8 @@ export const environments: Environment[] = [
     id: 'biblioteca',
     name: 'Biblioteca',
     description: 'Centro de conhecimento com acervo digital e físico, espaços de estudo individual e em grupo.',
-    modelPath: '/src/assets/biblioteca.glb',
-    audioPath: '/src/assets/audios/audio.mp3',
+    modelPath: '/Senac-VR-Experience/assets/biblioteca.glb',
+    audioPath: '/Senac-VR-Experience/assets/audios/audio.mp3',
     infoPoints: [
       {
         id: 'reading-area',
@@ -37,8 +37,8 @@ export const environments: Environment[] = [
     id: 'cozinha',
     name: 'Cozinha Pedagógica',
     description: 'Laboratório gastronômico equipado com tecnologia de ponta para cursos de culinária.',
-    modelPath: '/src/assets/cozinha.glb',
-    audioPath: '/src/assets/audios/audio.mp3',
+    modelPath: '/Senac-VR-Experience/assets/cozinha.glb',
+    audioPath: '/Senac-VR-Experience/assets/audios/audio.mp3',
     infoPoints: [
       {
         id: 'cooking-station',
@@ -53,7 +53,7 @@ export const environments: Environment[] = [
     id: 'entrada',
     name: 'Entrada Principal',
     description: 'Recepção moderna que dá as boas-vindas aos estudantes e visitantes.',
-    modelPath: '/src/assets/entrada.glb',
+    modelPath: '/Senac-VR-Experience/assets/entrada.glb',
     infoPoints: [
       {
         id: 'reception',
@@ -68,7 +68,7 @@ export const environments: Environment[] = [
     id: 'estacionamento',
     name: 'Estacionamento',
     description: 'Área de estacionamento segura e organizada para estudantes e funcionários.',
-    modelPath: '/src/assets/estacionamento.glb',
+    modelPath: '/Senac-VR-Experience/assets/estacionamento.glb',
     infoPoints: [
       {
         id: 'parking-area',
@@ -83,7 +83,7 @@ export const environments: Environment[] = [
     id: 'refeitorio',
     name: 'Refeitório',
     description: 'Espaço de convivência e alimentação com ambiente acolhedor e moderno.',
-    modelPath: '/src/assets/refeitorio.glb',
+    modelPath: '/Senac-VR-Experience/assets/refeitorio.glb',
     infoPoints: [
       {
         id: 'dining-area',
@@ -98,7 +98,7 @@ export const environments: Environment[] = [
     id: 'sala-de-aula',
     name: 'Sala de Aula',
     description: 'Ambiente de aprendizagem equipado com tecnologia educacional avançada.',
-    modelPath: '/src/assets/Saladeaula.glb',
+    modelPath: '/Senac-VR-Experience/assets/Saladeaula.glb',
     infoPoints: [
       {
         id: 'smart-board',
