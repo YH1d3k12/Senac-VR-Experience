@@ -4,7 +4,7 @@ export const environments: Environment[] = [
   {
     id: 'auditorio',
     name: 'Auditório',
-    description: 'Espaço moderno para apresentações e eventos acadêmicos com capacidade para grandes audiências.',
+    description: 'Bem-vindo ao Auditório! Aqui você pode presenciar diversas apresentações e eventos acadêmicos junto de um grande público.',
     modelPath: '/Senac-VR-Experience/assets/Auditorio.glb',
     audioPath: '/Senac-VR-Experience/assets/audios/audio.mp3',
     infoPoints: [
@@ -20,7 +20,7 @@ export const environments: Environment[] = [
   {
     id: 'biblioteca',
     name: 'Biblioteca',
-    description: 'Centro de conhecimento com acervo digital e físico, espaços de estudo individual e em grupo.',
+    description: 'Bem-vindo à biblioteca virtual! Aqui você pode acessar o nosso catálogo virtual de livros, que você também pode encontrar na nossa biblioteca real.',
     modelPath: '/Senac-VR-Experience/assets/biblioteca.glb',
     audioPath: '/Senac-VR-Experience/assets/audios/audio.mp3',
     infoPoints: [
@@ -36,7 +36,7 @@ export const environments: Environment[] = [
   {
     id: 'cozinha',
     name: 'Cozinha Pedagógica',
-    description: 'Laboratório gastronômico equipado com tecnologia de ponta para cursos de culinária.',
+    description: 'Bem-vindo à Cozinha Pedagógica! Aqui você pode conhecer mais sobre gastronomia e criar pratos incríveis.',
     modelPath: '/Senac-VR-Experience/assets/cozinha.glb',
     audioPath: '/Senac-VR-Experience/assets/audios/audio.mp3',
     infoPoints: [
@@ -52,7 +52,7 @@ export const environments: Environment[] = [
   {
     id: 'entrada',
     name: 'Entrada Principal',
-    description: 'Recepção moderna que dá as boas-vindas aos estudantes e visitantes.',
+    description: 'Bem-vindo ao SENAC! Aqui você pode acessar nosso mapa interativo ou iniciar um tour guiado. Como posso ajudar?',
     modelPath: '/Senac-VR-Experience/assets/entrada.glb',
     infoPoints: [
       {
@@ -67,7 +67,7 @@ export const environments: Environment[] = [
   {
     id: 'estacionamento',
     name: 'Estacionamento',
-    description: 'Área de estacionamento segura e organizada para estudantes e funcionários.',
+    description: 'Bem-vindo ao estacionamento! Aqui é onde nossos alunos e professores entram e saem da instituição. Temos espaço para carros, motos, e também uma guarita para garantir a segurança durante a entrada e saída.',
     modelPath: '/Senac-VR-Experience/assets/estacionamento.glb',
     infoPoints: [
       {
@@ -82,7 +82,7 @@ export const environments: Environment[] = [
   {
     id: 'refeitorio',
     name: 'Refeitório',
-    description: 'Espaço de convivência e alimentação com ambiente acolhedor e moderno.',
+    description: 'Bem-vindo ao refeitório! Aqui é onde nossos alunos podem se alimentar ou comprar comida antes das aulas e durante intervalos, completo com ambiente acolhedor e moderno.',
     modelPath: '/Senac-VR-Experience/assets/refeitorio.glb',
     infoPoints: [
       {
@@ -97,7 +97,7 @@ export const environments: Environment[] = [
   {
     id: 'sala-de-aula',
     name: 'Sala de Aula',
-    description: 'Ambiente de aprendizagem equipado com tecnologia educacional avançada.',
+    description: 'Bem-vindo à sala de aula! Aqui você pode mergulhar no universo da programação, ou conhecer práticas reais praticadas em hospitais.',
     modelPath: '/Senac-VR-Experience/assets/Saladeaula.glb',
     infoPoints: [
       {
