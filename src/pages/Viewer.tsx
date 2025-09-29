@@ -21,7 +21,7 @@ const Viewer: React.FC = () => {
 
       if (env.audioPath) {
         const newAudio = new Audio(env.audioPath);
-        newAudio.loop = true; // se quiser que o áudio fique em loop
+        newAudio.loop = false; // se quiser que o áudio fique em loop
         setAudio(newAudio);
       }
     } else {
