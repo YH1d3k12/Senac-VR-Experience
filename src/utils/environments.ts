@@ -11,7 +11,7 @@ export const environments: Environment[] = [
         infoPoints: [
             {
                 id: 'parking-area',
-                position: [2, 0, 0],
+                position: [0.25, 0.4, 0],
                 title: 'Área de Estacionamento',
                 description:
                     'Vagas organizadas com sistema de segurança e controle de acesso.',
@@ -29,7 +29,7 @@ export const environments: Environment[] = [
         infoPoints: [
             {
                 id: 'reception',
-                position: [0, 0, 1],
+                position: [0.25, 0.4, 0],
                 title: 'Recepção',
                 description:
                     'Área de atendimento e informações para estudantes e visitantes.',
@@ -47,7 +47,7 @@ export const environments: Environment[] = [
         infoPoints: [
             {
                 id: 'reading-area',
-                position: [1, 0, 1],
+                position: [0.25, 0.4, 0],
                 title: 'Área de Leitura',
                 description:
                     'Espaço silencioso dedicado ao estudo e pesquisa individual.',
@@ -65,7 +65,7 @@ export const environments: Environment[] = [
         infoPoints: [
             {
                 id: 'cooking-station',
-                position: [0, 1, 0],
+                position: [0.25, 0.4, 0],
                 title: 'Estação de Cozimento',
                 description:
                     'Equipamentos profissionais para práticas culinárias avançadas.',
@@ -83,7 +83,7 @@ export const environments: Environment[] = [
         infoPoints: [
             {
                 id: 'dining-area',
-                position: [1, 0, 1],
+                position: [0.25, 0.4, 0],
                 title: 'Área de Alimentação',
                 description:
                     'Espaço confortável para refeições e socialização entre estudantes.',
@@ -101,7 +101,7 @@ export const environments: Environment[] = [
         infoPoints: [
             {
                 id: 'smart-board',
-                position: [0, 1, 2],
+                position: [0.25, 0.4, 0],
                 title: 'Lousa Inteligente',
                 description:
                     'Tecnologia interativa para aulas dinâmicas e engajadoras.',
@@ -119,7 +119,7 @@ export const environments: Environment[] = [
         infoPoints: [
             {
                 id: 'stage',
-                position: [0, 1, 2],
+                position: [0.25, 0.4, 0],
                 title: 'Palco Principal',
                 description:
                     'Área equipada com sistema de som e iluminação profissional para apresentações.',

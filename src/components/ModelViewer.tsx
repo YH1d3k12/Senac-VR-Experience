@@ -27,7 +27,7 @@ const Model: React.FC<ModelProps> = ({
             const size = box.getSize(new THREE.Vector3());
 
             // Centralizar o modelo na origem.
-            scene.position.copy(center).multiplyScalar(-1);
+            scene.position.copy(center).multiplyScalar(0);
 
             // Ajustar escala se necessário (opcional).
             const maxDimension = Math.max(size.x, size.y, size.z);
@@ -47,12 +47,7 @@ const Model: React.FC<ModelProps> = ({
         <group ref={modelRef}>
             <primitive object={scene} />
             {infoPoints.map(point => (
-                <Html
-                    key={point.id}
-                    position={point.position}
-                    distanceFactor={10}
-                    occlude
-                >
+                <Html key={point.id} position={point.position} occlude>
                     <div
                         className={`bg-cyan-400 text-black px-3 py-2 rounded-full cursor-pointer transition-all duration-300 ${
                             point.visible
@@ -95,8 +90,8 @@ const ModelViewer: React.FC<ModelViewerProps> = ({
         <div className="w-full h-full">
             <Canvas
                 camera={{
-                    position: [5, 3, 8],
-                    fov: 90,
+                    position: [0, 0, 0],
+                    fov: 60,
                     near: 0.1,
                     far: 1000,
                 }}
@@ -134,7 +129,7 @@ const ModelViewer: React.FC<ModelViewerProps> = ({
                     enableZoom={true}
                     enableRotate={true}
                     minDistance={0}
-                    maxDistance={2.5}
+                    maxDistance={0.8}
                     autoRotate={false}
                     autoRotateSpeed={0.5}
                     target={[0, 0.4, 0]}
