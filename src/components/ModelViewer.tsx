@@ -21,22 +21,18 @@ const Model: React.FC<ModelProps> = ({
 
     useEffect(() => {
         if (scene && modelRef.current) {
-            // Calcular bounding box do modelo.
             const box = new THREE.Box3().setFromObject(scene);
             const center = box.getCenter(new THREE.Vector3());
             const size = box.getSize(new THREE.Vector3());
 
-            // Centralizar o modelo na origem.
             scene.position.copy(center).multiplyScalar(0);
 
-            // Ajustar escala se necessário (opcional).
             const maxDimension = Math.max(size.x, size.y, size.z);
             if (maxDimension > 10) {
                 const scale = 10 / maxDimension;
                 scene.scale.setScalar(scale);
             }
 
-            // Posicionar câmera para uma vista adequada.
             const distance = Math.max(size.x, size.y, size.z) * 1.5;
             camera.position.set(distance * 0.5, distance * 0.3, distance * 0.8);
             camera.lookAt(0, 0, 0);
@@ -81,11 +77,27 @@ const LoadingSpinner: React.FC = () => (
     </Html>
 );
 
+const CameraLimiter: React.FC<{ controls: React.RefObject<any> }> = ({
+    controls,
+}) => {
+    useFrame(() => {
+        if (controls.current) {
+            const t = controls.current.target;
+            t.x = THREE.MathUtils.clamp(t.x, -0.2, 0.2);
+            t.y = THREE.MathUtils.clamp(t.y, 0, 2);
+            t.z = THREE.MathUtils.clamp(t.z, -0.2, 0.2);
+        }
+    });
+    return null;
+};
+
 const ModelViewer: React.FC<ModelViewerProps> = ({
     modelPath,
     infoPoints = [],
     onInfoPointToggle,
 }) => {
+    const controls = useRef<any>(null);
+
     return (
         <div className="w-full h-full">
             <Canvas
@@ -103,7 +115,7 @@ const ModelViewer: React.FC<ModelViewerProps> = ({
                 }}
                 style={{ background: 'transparent' }}
             >
-                {/* Iluminação melhorada para ambientes internos */}
+                {/* Iluminação */}
                 <ambientLight intensity={0.6} />
                 <directionalLight
                     position={[10, 10, 5]}
@@ -124,7 +136,9 @@ const ModelViewer: React.FC<ModelViewerProps> = ({
                     <Environment preset="apartment" />
                 </Suspense>
 
+                {/* OrbitControls + Clamp */}
                 <OrbitControls
+                    ref={controls}
                     enablePan={true}
                     enableZoom={true}
                     enableRotate={true}
@@ -139,6 +153,7 @@ const ModelViewer: React.FC<ModelViewerProps> = ({
                     minPolarAngle={0}
                     maxPolarAngle={Math.PI}
                 />
+                <CameraLimiter controls={controls} />
             </Canvas>
         </div>
     );
